@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url:'http://192.168.11.185:9108/json/user',
+                type:'GET',
+                dataType:'json',
+                success:function (data) {
+                    console.log(data);
+                    if (data.code == 4000){
+                        alert(data.result);
+                        //window.location.href = data.result;
+                    }
+                    var iii = JSON.stringify(data);
+                    $('#div').append(iii);
+                },
+                error:function (data,e) {
+                    console.log(data.status )
+                    console.log(e)
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+index
+<div id="div"></div>
+</body>
+</html>

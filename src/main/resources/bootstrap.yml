@@ -1,0 +1,7 @@
+
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://${mongodb.username}:${mongodb.password}@${mongodb.urls}/${mongodb.database}
+server:
+  port: 8090
